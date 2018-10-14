@@ -45,3 +45,11 @@ Proyecto 1 del curso de Inteligencia Artificial
 
 ### Informe
 - Creación de informe
+
+
+
+### REFERENCIAS BIBLIOGRÁFICAS
+
+- https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial/Importing_Modules
+- https://docs.python.org/2/tutorial/classes.html
+- https://www.python-course.eu/python3_modules_and_modular_programming.php
