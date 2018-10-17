@@ -1,6 +1,5 @@
 import csv  # Para abrir el archivo csv y cargar los datos
 import os  # Para cargar el archivo de datos desde la ruta de instalacion
-
    
 # Variables globales
 PARENT_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -12,7 +11,7 @@ Crea un individuo por cada voto recibido y toma en cuenta los indicadores canton
 La lista individuo contiene en los indices los siguientes datos:
 """
 
-def read_file():
+def read_file(file_name):
     with open("cancer.csv") as csvfile:  ##open(csvURL,encoding="utf8")-- Es para correr en windows
         entry = csv.reader(csvfile)
         for reg in entry:

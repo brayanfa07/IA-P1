@@ -1,6 +1,5 @@
 
 
-
 class Decision_tree_model:
     attrib_value_entropy_general_list = []
     r = ""
