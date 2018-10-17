@@ -1,5 +1,6 @@
 import csv  # Para abrir el archivo csv y cargar los datos
 import os  # Para cargar el archivo de datos desde la ruta de instalacion
+from statistics import mean, pstdev
    
 # Variables globales
 PARENT_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -11,8 +12,9 @@ Crea un individuo por cada voto recibido y toma en cuenta los indicadores canton
 La lista individuo contiene en los indices los siguientes datos:
 """
 
+#Function that red the csv file
 def read_file(file_name):
-    with open("cancer.csv") as csvfile:  ##open(csvURL,encoding="utf8")-- Es para correr en windows
+    with open(file_name) as csvfile:  ##open(csvURL,encoding="utf8")-- Es para correr en windows
         entry = csv.reader(csvfile)
         for reg in entry:
             dataset.append(reg)
@@ -20,4 +22,19 @@ def read_file(file_name):
             print()
     return 0
 
-read_file()
+#Function that calculates the mean of a list
+def mean(datalist):
+    return mean(datalist)
+
+#Function that calculate the standard deviation
+def standard_deviation(datalist):
+    return stdev(datalist)
+
+#Function that create a datalist
+def calc_datalist(sampledata, column):
+    datalist = []
+    for i in range(len(sampledata)):
+        datalist.append(sampledata[i][column])
+
+
+#read_file("cancer.csv")
