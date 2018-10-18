@@ -17,7 +17,7 @@ from keras.layers import Dense
 #numpy.random.seed(7)
 # Para generar la muestra de datos
 #from tec.ic.ia.pc1.g09 import generar_muestra_pais, generar_muestra_provincia
-from manage_file import read_file, delete_column_datalist
+from manage_file import read_file, delete_column_datalist, normalize_list
 from decisiontree import Decision_tree_model, Decision_tree
 
 # Variables globales generales
@@ -61,9 +61,10 @@ con datos de prueba, al final imprime los resultados de error y llama a la
 funcion que guarda los datos en el csv.
 """
 def ejecutar():
-    #data = generar_muestra_pais(poblacion)
+    #read the data from the 
     data = read_file(filename)
     data = delete_column_datalist(data)
+    data = normalize_list(data)
     xdata = copy.deepcopy(data)
     div = int(porcentaje_pruebas * poblacion / 100)
     lista_r1, lista_r2, lista_r21, j = [], [], [], 0
