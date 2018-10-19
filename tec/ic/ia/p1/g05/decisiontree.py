@@ -1,4 +1,24 @@
 
+import cmd # Para la linea de comandos
+# Para encontrar la cantidad de veces que un elemento esta en una lista
+import collections
+import math
+from statistics import mean # Para encontrar el promedio de una lista
+import csv # Para manejar archivos csv
+import copy # Para hacer deepcopy de variables
+import numpy as np # Para crear listas usadas en SVM y regresion lineal
+from sklearn import svm # Para crear el modelo de SVM
+# Para codificar vectores de manera binaria
+from sklearn.preprocessing import OneHotEncoder
+import tensorflow as tf # Para crear el modelo de regresion lineal
+from numpy import argmax # Para decodificar vectores
+from keras.models import Sequential
+from keras.layers import Dense
+#numpy.random.seed(7)
+# Para generar la muestra de datos
+#from tec.ic.ia.pc1.g09 import generar_muestra_pais, generar_muestra_provincia
+from manage_file import read_file, delete_column_datalist, normalize_list
+
 
 class Decision_tree_model:
     attrib_value_entropy_general_list = []
@@ -235,7 +255,7 @@ class Decision_tree_model:
                     if (probabilistic_class_list[i] == 0):
                             entropy = entropy + 0
                     else:
-                            entropy = entropy - (probabilistic_class_list[i] * (math.log(probabilistic_class_list[i],base)))
+                            entropy = entropy - (probabilistic_class_list[i] * math.log(probabilistic_class_list[i],base))
             return entropy
 
     #Calc the class of an object
