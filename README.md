@@ -8,41 +8,60 @@
 
 
 
-### I Semestre 2018
+### II Semestre 2018
 
 
 ---
 ## 1. Introducción</h2>
 
 
+## 2. Predicción con Kaggle
+
+
+## 3. Árbol de Decisión
+
+
+### Diseño del modelo
+
+
+### Prueba del modelo
+
+
+### Análisis de resultados
+
+## 4. Red Neuronal
+
+### Diseño del modelo
+
+
+### Prueba del modelo
+
+
+### Análisis de resultados
+
+
+## 5. División de tareas y calificación de grupo
+
+## 6. Conclusiones
+
+
+
+## 7. Apéndice
+
+
+
+### 7.1. Manual de Instalación
 
 
 
 
 
+### 7.2. Manual de Usuario
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Referencias
 
 
 
