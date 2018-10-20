@@ -1,5 +1,10 @@
 # Proyecto #1 - Predicción con Kaggle
-## IC-6200 Inteligencia Artificial</h2>
+---
+## IC-6200 Inteligencia Artificial
+---
+Enlace de GitHub: https://github.com/brayanfa07/IA-P1
+
+
 ## Integrantes
 
 - Brayan Fajardo Alvarado - 201157035
@@ -51,6 +56,56 @@
 
 
 ### 7.1. Manual de Instalación
+
+El manual de instalación es una guía sobre los ajustes y componentes requeridos para instalar los programas que definen los modelos de predicción de inteligencia artificial.
+
+Dichos componentes se utilizan en conjunto con Python, así que se requiere tener instalado la versión 3.5.2 o superior para agregar los demás componentes
+
+A continuación se describen los comandos requeridos para instalar los componentes, los cuales se instalan ejecutando cada comando desde una Terminal de comandos de Linux
+
+#### 7.1.1 Instalación de Scipy
+
+Comando a ejecutar:
+`pip3 install scipy --user`
+
+#### 7.1.2 Instalación de scikit
+
+Comandos a ejecutar:
+
+`sudo pip3 install numpy scipy`
+
+`pip3 install -U scikit-learn --user`
+
+#### 7.1.3 Instalación de matplotlib
+
+Comandos a ejecutar:
+
+`pip3 install matplotlib --user`
+
+#### 7.1.4 Instalación de tensorflow
+
+`pip3 install tensorflow --user`
+
+#### 7.1.5 Instalación de Keras
+
+`pip3 install keras`
+
+### 7.2. Manual de usuario
+
+El manual de usuario es una guía para colocar a funcionar el sistema de predicción del voto.
+
+Para realizar la ejecución del programa de Predicción, se deberá contar con tener instalado la versión Python 3.5.2 o superior.
+
+#### 7.2.1 Ejecución de modelos
+
+Se describen los pasos requeridos para poner a funcionar el programa:
+
+Ejecutar el comando `python3 g09.py`
+
+
+Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcentaje-pruebas <valor> --red-neuronal --red-neuronal --numero-capas <valor> --unidades-por-capa <valor> --funcion-activacion <valor> si se desea realizar una predicción utilizando la red neuronal.
+
+Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcentaje-pruebas <valor> --arbol --umbral-poda <valor> si se desea realizar una predicción utilizando el árbol de decisión.
 
 
 
