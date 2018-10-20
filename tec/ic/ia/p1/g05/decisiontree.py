@@ -272,69 +272,30 @@ class Decision_tree_model:
 
           
 
-    def convert_to_interval(self,data):
-            i = 0
-            n = len(data)
-            while(i < n):
-                    if(data[i][2] < 50000):
-                            data[i][2] = "0 a 50000"
-                    elif(data[i][2] < 100000 and data[i][2] >= 50000):
-                            data[i][2] = "50000 a 100000"
-                    elif(data[i][2] < 150000 and data[i][2] >= 100000):
-                            data[i][2] = "100000 a 150000"
-                    elif(data[i][2] < 200000 and data[i][2] >= 150000):
-                            data[i][2] = "150000 a 200000"
-                    elif(data[i][2] > 200000):
-                            data[i][2] = "200000 a 250000"
-                    if(data[i][7] < 30):
-                            data[i][7] = "18 a 30"
-                    elif(data[i][7] < 50 and data[i][7] >= 30):
-                            data[i][7] = "30 a 50"
-                    elif(data[i][7] < 75 and data[i][7] >= 50):
-                            data[i][7] = "50 a 75"
-                    elif(data[i][7] < 150 and data[i][7] >= 75):
-                            data[i][7] = "75 a 100"
-                    if(data[i][3] < 1000):
-                            data[i][3] = "0 a 1000"
-                    elif(data[i][3] < 2000 and data[i][3] >= 1000):
-                            data[i][3] = "1000 a 2000"
-                    elif(data[i][3] < 3000 and data[i][3] >= 2000):
-                            data[i][3] = "2000 a 3000"
-                    elif(data[i][3] < 4000 and data[i][3] >= 3000):
-                            data[i][3] = "3000 a 4000"
-                    if(data[i][4] < 2000):
-                            data[i][4] = "0 a 2000"
-                    elif(data[i][4] < 4000 and data[i][4] >= 2000):
-                            data[i][4] = "2000 a 4000"
-                    elif(data[i][4] < 6000 and data[i][4] >= 4000):
-                            data[i][4] = "4000 a 6000"
-                    elif(data[i][4] < 8000 and data[i][4] >= 6000):
-                            data[i][4] = "6000 a 8000"
-                    if(data[i][8] < 20000):
-                            data[i][8] = "0 a 20000"
-                    elif(data[i][8] < 40000 and data[i][8] >= 20000):
-                            data[i][8] = "20000 a 40000"
-                    elif(data[i][8] < 60000 and data[i][8] >= 40000):
-                            data[i][8] = "40000 a 60000"
-                    elif(data[i][8] < 85000 and data[i][8] >= 60000):
-                            data[i][8] = "60000 a 85000"
-                    if(data[i][9] < 3):
-                            data[i][9] = "0 a 3"
-                    elif(data[i][9] < 3.5 and data[i][9] >= 3):
-                            data[i][9] = "3 a 3.5"
-                    elif(data[i][9] < 4.1 and data[i][9] >= 3.5):
-                            data[i][9] = "3.5 a 4.1"
-                    if(data[i][13] < 6):
-                            data[i][13] = "0 a 6"
-                    elif(data[i][13] < 8 and data[i][13] >= 6):
-                            data[i][13] = "6 a 8"
-                    elif(data[i][13] < 10 and data[i][13] >= 8):
-                            data[i][13] = "8 a 10"
-                    elif(data[i][13] < 13 and data[i][13] >= 10):
-                            data[i][13] = "10 a 12"
-                    data[i].pop(1)
-                    i += 1
-            return data
+    def convert_to_interval(self,datalist):
+            new_list = []
+            height_datalist = len(datalist) 
+            weight_datalist = len(datalist[0])
+            for i in range(height_datalist):
+                row = []
+                for j in range(weight_datalist):
+                    if datalist[i][j] ==  'M' or datalist[i][j] == 'B':
+                        row.append(datalist[i][j])
+                    else:
+                        if datalist[i][j] > -3 and datalist[i][j] <= 1:
+                            row.append(1)
+                        if datalist[i][j] > 1 and datalist[i][j] <= 4:
+                            row.append(2)
+                        if datalist[i][j] > 4 and datalist[i][j] <= 7:
+                            row.append(3)
+                        if datalist[i][j] > 7 and datalist[i][j] <= 10:
+                            row.append(4)
+                        if datalist[i][j] > 10 and datalist[i][j] <= 13:
+                            row.append(5)
+                new_list.append(row)
+                print(row)
+                print()
+            return new_list
 
 
 

@@ -64,10 +64,7 @@ def ejecutar():
     #read the data from the 
     data = read_file(filename)
     data = delete_column_datalist(data)
-    data = normalize_list(data)
-    data = classify_data(data)
-
-    """
+    data = normalize_list(data)    
 
     xdata = copy.deepcopy(data)
     div = int(porcentaje_pruebas * poblacion / 100)
@@ -231,7 +228,7 @@ def ejecutar():
     print("%Error prueba r21", 100 - correcto_r21 * 100 / n)
     generar_csv(xdata)
 
-  """
+
 
 """
 Clase que crea una linea de comandos para poder ejecutar los modelos
