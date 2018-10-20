@@ -270,6 +270,8 @@ class Decision_tree_model:
                             class_data_list.append(data_list[i][position])
             return class_data_list
 
+          
+
     def convert_to_interval(self,data):
             i = 0
             n = len(data)
@@ -334,6 +336,8 @@ class Decision_tree_model:
                     i += 1
             return data
 
+
+
 class Decision_tree:
     element = None
     children = None
@@ -343,3 +347,6 @@ class Decision_tree:
         self.element = element #Index of the attribute in the data
         self.decisions = []
         self.children = []
+
+
+

@@ -17,7 +17,7 @@ from keras.layers import Dense
 #numpy.random.seed(7)
 # Para generar la muestra de datos
 #from tec.ic.ia.pc1.g09 import generar_muestra_pais, generar_muestra_provincia
-from manage_file import read_file, delete_column_datalist, normalize_list
+from manage_file import read_file, delete_column_datalist, normalize_list, classify_data
 from decisiontree import Decision_tree_model, Decision_tree
 
 # Variables globales generales
@@ -65,6 +65,10 @@ def ejecutar():
     data = read_file(filename)
     data = delete_column_datalist(data)
     data = normalize_list(data)
+    data = classify_data(data)
+
+    """
+
     xdata = copy.deepcopy(data)
     div = int(porcentaje_pruebas * poblacion / 100)
     lista_r1, lista_r2, lista_r21, j = [], [], [], 0
@@ -164,19 +168,6 @@ def ejecutar():
             promedio_r1 = 0
             i += 1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     elif(modelo=="ad"):
         lista_modelos_r21, lista_modelos_r2, lista_modelos_r1 = [], [], []
         # 5-Cross validation
@@ -240,20 +231,7 @@ def ejecutar():
     print("%Error prueba r21", 100 - correcto_r21 * 100 / n)
     generar_csv(xdata)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+  """
 
 """
 Clase que crea una linea de comandos para poder ejecutar los modelos
@@ -684,21 +662,6 @@ class NeuralNet:
         self.funcionActivacion=funcionActivacion
         self.trainNN()
         
-        """listCutIndex=(len(self.data)*self.percentageTesting)//100
-        self.dataTrainig=np.array(self.data[listCutIndex:])
-        self.dataTesting=np.array(self.data[:listCutIndex])
-          n=2#len(self.dataCompleta)
-
-        self.dataTrainigR1== [self.data[:n - 2]]
-        self.dataTrainigR2== [self.data[:n - 2]]
-        self.dataTrainigR2_R1== [self.data[:n - 1]]
-
-        print("R1",self.dataTrainigR1)
-        print("R2",self.dataTrainigR2)
-        print("R2-R1",self.dataTrainigR2_R1)"""
-
-        #Aca se generarán las 3 tipo de predicciones.
-
     def trainNN(self):      
         #RED para R2_R1
         self.X_R2_R1 = self.dataCompleta[:,0:23] ##No toma en cuenta partido de segunda ronda
@@ -741,30 +704,7 @@ class NeuralNet:
         # evaluate the model
         #scores = self.model_R2.evaluate(self.X_R2, self.Y_R2,)
 
-        """
-        #--------------------------------------------
-        #RED para R1
-        self.X_R1 = self.dataCompleta[:,0:21] ##No toma en cuenta partido de primera ronda ni partido de segunda ronda
-        self.Y_R1 = self.dataCompleta[:,21]  
-
-        #(#neuronas, funcion de activacion ,)
-        #Dense=capas conectadas completamente
-        self.model_R1.add(Dense(9, input_dim=21, activation='relu'))
-        for i in range(self.numeroCapas):  #
-            self.model_R1.add(Dense(self.unidadesCapa, activation='relu'))
-        self.model_R1.add(Dense(1, activation='softmax'))
-
-        # Compile model
-        #self.model_R1.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-        self.model_R1.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['accuracy'])
-
-        # Fit the model
-        self.model_R1.fit(self.X_R1, self.Y_R1, epochs=150, batch_size=10)
-
-        # evaluate the model
-        scores = self.model_R1.evaluate(self.X_R1, self.Y_R1,)
-        print("\n%s: %.2f%%" % (self.model_R1.metrics_names[1], scores[1]*100)) #Imprime basado en las metricas que puse en model.compile()
-        """
+        
 
     def testR2_R1(self,dataForPrediction): ##R2_R1
         #Filtrar para agarrar solo voto primera ronda
@@ -861,6 +801,7 @@ class NeuralNet:
             xdata.append(tmp)
             i += 1
         return xdata0
+
 
 
 

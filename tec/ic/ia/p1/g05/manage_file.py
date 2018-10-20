@@ -18,6 +18,8 @@ La lista individuo contiene en los indices los siguientes datos:
 def delete_column_datalist(datalist): 
     for i in range(len(datalist)):
         datalist[i].pop(0)
+        #print(datalist[i])
+        #print()
 
     return datalist
 
@@ -49,20 +51,52 @@ def calc_datalist(sampledata, column):
 
 #Function that normalize the datalist
 def normalize_list(datalist):
-
-    height_datalist = len(datalist) - 1
-    weight_datalist = len(datalist[0]) - 2
-
-
+    height_datalist = len(datalist) 
+    weight_datalist = len(datalist[0])
     new_list = []
+    max_list = []
+    min_list = []
     for i in range(height_datalist):
         row = []
         for j in range(weight_datalist):
-            z = (float(datalist[i][j]) - mean_function(calc_datalist(datalist, j))) / standard_deviation(calc_datalist(datalist, j))
-            row.append(z)
-        new_list.append(row)
-
+            if datalist[i][j] ==  'M' or datalist[i][j] == 'B':
+                row.append(datalist[i][j])
+            else:
+                element = (float(datalist[i][j]) - mean_function(calc_datalist(datalist, j))) / standard_deviation(calc_datalist(datalist, j))
+                row.append(element)
+            new_list.append(row)
+            #print(row)
+            #print()
+            #max_list.append(max(row))
+            #min_list.append(min(row))
+    #print("max: ", max(max_list), "min: ", min(min_list))
     return new_list
 
+#Function that classify the data in categories
+
+def classify_data(datalist):
+    new_list = []
+    height_datalist = len(datalist) 
+    weight_datalist = len(datalist[0])
+    for i in range(height_datalist):
+        row = []
+        for j in range(weight_datalist):
+            if datalist[i][j] ==  'M' or datalist[i][j] == 'B':
+                row.append(datalist[i][j])
+            else:
+                if datalist[i][j] > -3 and datalist[i][j] <= 1:
+                    row.append(1)
+                if datalist[i][j] > 1 and datalist[i][j] <= 4:
+                    row.append(2)
+                if datalist[i][j] > 4 and datalist[i][j] <= 7:
+                    row.append(3)
+                if datalist[i][j] > 7 and datalist[i][j] <= 10:
+                    row.append(4)
+                if datalist[i][j] > 10 and datalist[i][j] <= 13:
+                    row.append(5)
+        new_list.append(row)
+        print(row)
+        print()
+    return new_list
 
 #read_file("cancer.csv")
