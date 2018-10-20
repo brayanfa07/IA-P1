@@ -1,3 +1,59 @@
+# Proyecto #1 - Predicción con Kaggle
+## IC-6200 Inteligencia Artificial</h2>
+## Integrantes
+
+- Brayan Fajardo Alvarado - 201157035
+- Fabricio Castillo Alvarado - 2014062977
+- Gerald Mora Mora - 2014
+
+
+
+### I Semestre 2018
+
+
+---
+## 1. Introducción</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # IA-P1
 Proyecto 1 del curso de Inteligencia Artificial
 
