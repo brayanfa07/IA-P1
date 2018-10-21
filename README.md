@@ -58,14 +58,13 @@ La elaboración del diseño del modelo conlleva los siguientes pasos:
 ### Análisis de resultados
 
 ## 4. Red Neuronal
+El modelo de Red neuronal utiliza la biblioteca de Keras la cual, está integrada, con un backend Tensorflow de inteligencia artificial. Las redes de neuronas artificiales (denominadas habitualmente como RNA o en inglés como: “ANN”) son un paradigma de aprendizaje y procesamiento automático inspirado en la forma en que funciona el sistema nervioso de los animales. Se trata de un sistema de interconexión de neuronas que colaboran entre sí para producir un estímulo de salida. En inteligencia artificial es frecuente referirse a ellas como redes de neuronas o redes neuronales. Forman parte de los denominados “Sistemas Inteligentes“, dentro de la rama de la Inteligencia Artificial.
 
 ### Diseño del modelo
+Para la realización del modelo se modificó el archivo de datos para contar con una representación numérica de la predicción para utilizar la red neuronal. Posteriormente los datos son convertidos a un arreglo numpy, el cual es la estructura, que se debe utilizar con Keras. Estos datos son desordenados antes de ser utilizados. Se toma una cantidad de datos para realizar el entrenamiento y las pruebas de la red neuronal. Luego se especifica la estructura de los datos a utilizar por Tensorflow. A continuación se crea la red neuronal, se realiza el entrenamiento y se evalúa la precisión de la red neuronal.
 
-
-### Prueba del modelo
-
-
-### Análisis de resultados
+### Prueba del modelo y Análisis de resultados
+Para la ejecución del modelo se toman las 569 filas del archivo de datos, las cuales son distintas muestras de cáncer de mama, estos datos son tomados de las distintas características que poseen las muestras del archivo. Para la ejecución del modelo se toman en cuenta las características más importantes y que aportan más información al modelo. Una vez cargados los datos, se ejecuta el modelo para obtener las predicciones del estado de la muestra. Luego de ejecutar el modelo se obtienen varios resultados, uno de los resultados es la precisión, la cual representa que tan eficiente es la predicción para determinar la clasificación del tejido de cada muestra, en este caso si es cáncer maligno o benigno.
 
 
 ## 5. División de tareas y calificación de grupo
