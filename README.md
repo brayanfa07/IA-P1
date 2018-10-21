@@ -9,15 +9,17 @@ Enlace de GitHub: https://github.com/brayanfa07/IA-P1
 
 - Brayan Fajardo Alvarado - 201157035
 - Fabricio Castillo Alvarado - 2014062977
-- Gerald Mora Mora - 2014
+- Gerald Mora Mora - 2014064955
 
 ### II Semestre 2018
 
 
 ---
 ## 1. Introducción
-
-
+La predicción de resultados es uno de los más grandes retos que posee la inteligencia artificial, ya que se requiere tener un modelo, de aprendizaje de datos, que logre identificar atributos como entradas y realizar un análisis, específico de cada modelo, para predecir una salida, la cual se espera sea correcta basada en los datos de entrenamiento.
+En este proyecto se desarrollan 2 modelos de aprendizaje, los cuales son:
+- Redes Neuronales.
+- Árboles de decisión.
 
 ## 2. Predicción con Kaggle
 
