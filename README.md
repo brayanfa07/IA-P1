@@ -11,8 +11,6 @@ Enlace de GitHub: https://github.com/brayanfa07/IA-P1
 - Fabricio Castillo Alvarado - 2014062977
 - Gerald Mora Mora - 2014
 
-
-
 ### II Semestre 2018
 
 
@@ -32,7 +30,19 @@ Este modelo necesita analizar datos para determinar como será construida la est
 
 ### Diseño del modelo
 
+La elaboración del diseño del modelo conlleva los siguientes pasos:
 
+- Definición de atributos : Se definen los atributos que poseen los datos que se ingresan como entrada al sistema.
+- Definición de valores de atributos : Se comprueba los valores discretos que poseen cada uno de los atributos en los datos. En caso de que sean valores continuos, se aplicará un algorimo de clasificación y separación de datos.
+- Definición de la clase de datos : Se define la clase o los resultados a los cuales se espera llegar a tener con una decisión. Estos elementos se irán eliminando conforme se vaya creando el árbol de decisión.
+- Cálculo de entropía de la clase de datos : Se aplica el cálculo de la entropía de la clase de datos, el cual indicará que tan cierta es una variable.
+- Cálculo de entropía de los valores de los atributos : Se aplica el mismo cálculo de la entropía, y además se logra verificar si la entropía es igual a cero, ya que así se llega a una decisión concreta del árbol.
+- Cálculo de la ganancia de la información : El cálculo de la ganancia es un algoritmo en el cual se commprueba, utlizando probabilidades y entropías, el atributo que será mayor determinante para seguir una decisión.
+- Comprobación del atributo con mayor ganancia : Después de calcular las ganancias de información, se escoge al primero que posea la mayor ganancia.
+- Eliminación de atributos de la lista de la muestra de datos y que poseen la mayor ganancia de información : Se eliminan de la lista los atributos que poseen la mayor ganancia de la información, además que se eliminan aquellas clases de elementos en donde los valores del atributo seleccionados hayan llegado a su fin debido que poseen una entropia igual a cero.
+- Insertar en el árbol atributo con mayor ganancia : Del punto anterior, se elige el aributo con la mayor ganancia, y este se inserta en el árbol de decisión, agregando además los valores de dicho atributo que permitirá llegar a un resultado definitivo o seguir agregando más atributos o preguntas de decisión.
+- Definición de decisiones que salen de los atributos insertados en el árbol : Después de agregar un atributo al árbol de decisión, se definen cuales son los valores que saldrán de este nodo de árbol. En caso de ser un nodo o elemento que muestre el resultado del árbol, no se agregan más valores o ramas de valores a este nodo.
+- Poda del árbol : Es el proceso en el cual se eliminan nodos hoja del árbol, con el fin de que el mismo quede con mucha menos anchura y se mejore la velocidad en la predicción del modelo. 
 
 ### Prueba del modelo
 
@@ -57,8 +67,7 @@ Este modelo necesita analizar datos para determinar como será construida la est
 
 
 ## 7. Apéndice
-
-
+---
 
 ### 7.1. Manual de Instalación
 
@@ -117,72 +126,7 @@ Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcenta
 Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcentaje-pruebas <valor> --arbol --umbral-poda <valor> si se desea realizar una predicción utilizando el árbol de decisión.
 
 
-
-
-
 ## Referencias
-
-
-
-
-
-
-
-
-
-
-
-# IA-P1
-Proyecto 1 del curso de Inteligencia Artificial
-
-
-## Tareas por realizar (README TEMPORAL)
-
-### Requerimientos de alta calidad de desarrollo de software
-- Implementación de banderas
-- Uso de Github
-- Pruebas de Pytest y Pytest-cov
-- Instanciación de clases
-
-### Preprocesamiento de datos, normalización y codificación
-- Transformación de datos de entrada
-- Normalizar datos con "z-score" y "standard score"
-- "One-hot encoding" para normalizar
-
-### Módulo de entrenamiento y predicción con Random Forest
-- Implementación de árboles de decisión
-  - Usar random forest wiki
-  - Crear archivos de rendimiento con estadísticas
-  - Paso de poda
-  
-### Módulo de entrenamiento y predicción con redes neuronales
-- Implementación de red neuronal
-  - Utilización de tensor-flow y keras
-  - Herencia para pruebas
-  - Uso de mocking
-  - Análisis de resultados
-  
-### Módulo de cross-validation y evaluación genérico
-- Cross-validation
-- Generación de archivos de resultados
-
-### Programa de consola primario que llama a cada algoritmo
-- Implementación de main
-
-### Puntos extra
-- Regresión lineal
-  - Análisis de resultados L1 y L2
-
-### Requerimientos básicos y operativos del programa principal
-- Uso de prefijos en archivos generados
-- Generación de CSV
-
-### Informe
-- Creación de informe
-
-
-
-### REFERENCIAS BIBLIOGRÁFICAS
 
 - https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial/Importing_Modules
 - https://docs.python.org/2/tutorial/classes.html
