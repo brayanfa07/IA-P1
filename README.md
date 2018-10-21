@@ -139,3 +139,17 @@ Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcenta
 - https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial/Importing_Modules
 - https://docs.python.org/2/tutorial/classes.html
 - https://www.python-course.eu/python3_modules_and_modular_programming.php
+- Árbol kd. (2016, marzo 14). En Wikipedia, la enciclopedia libre. Recuperado a partir de https://es.wikipedia.org/w/index.php?title=%C3%81rbol_kd&oldid=89814916
+- Brownlee, J. (2016a, mayo 24). Develop Your First Neural Network in Python With Keras Step-By-Step. Recuperado 5 de mayo de 2018, a partir de https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
+- Brownlee, J. (2016b, junio 2). Multi-Class Classification Tutorial with the Keras Deep Learning Library. Recuperado 5 de mayo de 2018, a partir de https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/
+- Desarrolla tu Primera Red Neural en Python con Keras Paso a Paso - ® Cursos Python desde 0 a Experto trophy garantizados. (s. f.). Recuperado 5 de mayo de 2018, a partir de https://www.aprenderpython.net/desarrolla-primera-red-neural-python-keras-paso-paso/
+- In-Depth: Support Vector Machines | Python Data Science Handbook. (s. f.). Recuperado 5 de mayo de 2018, a partir de https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html
+- kdtree-in-python: Source Code for K-d tree in Python series. (2018). Python, Tsoding. Recuperado a partir de https://github.com/tsoding/kdtree-in-python (Original work published 2017)
+- Logistic regression in Tensorflow for beginner. (s. f.). Recuperado 5 de mayo de 2018, a partir de https://www.kaggle.com/niyamatalmass/logistic-regression-in-tensorflow-for-beginner
+- Logistic Regression with TensorFlow. (s. f.). Recuperado 5 de mayo de 2018, a partir de http://www.serrate.net/2018/02/18/logistic-regression-with-tensorflow/index.html
+- Polamuri, S. (2017, enero 25). Support vector machine (Svm classifier) implemenation in python with Scikit-learn.
+Recuperado 5 de mayo de 2018, a partir de http://dataaspirant.com/2017/01/25/svm-classifier-implemenation-python-scikit-learn/
+- Sequential - Keras Documentation. (s. f.). Recuperado 5 de mayo de 2018, a partir de https://keras.io/models/sequential/
+- Sikonja, M. R. (1998). Speeding up Relief algorithms with k-d trees.
+- TK. (2017, octubre 28). Learning Tree Data Structure. Recuperado 5 de mayo de 2018, a partir de https://medium.com/the-renaissance-developer/learning-tree-data-structure-27c6bb363051
+- Understanding Support Vector Machine algorithm from examples (along with code). (2017, septiembre 13). Recuperado 5 de mayo de 2018, a partir de https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/
