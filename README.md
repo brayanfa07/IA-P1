@@ -17,7 +17,8 @@ Enlace de GitHub: https://github.com/brayanfa07/IA-P1
 
 
 ---
-## 1. Introducción</h2>
+## 1. Introducción
+
 
 
 ## 2. Predicción con Kaggle
@@ -25,8 +26,12 @@ Enlace de GitHub: https://github.com/brayanfa07/IA-P1
 
 ## 3. Árbol de Decisión
 
+El aŕbol de decisión es un tipo de algoritmo el cual es utilizado para determinar la predicción de una muestra o arreglo de datos que posea varios atributos. Dicha predicción se realiza de inmediata, con lo cual se van comparando los valores que posee una expresión lógica y se compara con los atributos originados para el árbol de decisión, con el fin de obtener un resultado.
+
+Este modelo necesita analizar datos para determinar como será construida la estructura del árbol 
 
 ### Diseño del modelo
+
 
 
 ### Prueba del modelo
@@ -62,6 +67,10 @@ El manual de instalación es una guía sobre los ajustes y componentes requerido
 Dichos componentes se utilizan en conjunto con Python, así que se requiere tener instalado la versión 3.5.2 o superior para agregar los demás componentes
 
 A continuación se describen los comandos requeridos para instalar los componentes, los cuales se instalan ejecutando cada comando desde una Terminal de comandos de Linux
+
+#### 7.1.1 Instalación de pip
+
+`sudo apt-get install python3-pip`
 
 #### 7.1.1 Instalación de Scipy
 
@@ -107,11 +116,6 @@ Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcenta
 
 Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcentaje-pruebas <valor> --arbol --umbral-poda <valor> si se desea realizar una predicción utilizando el árbol de decisión.
 
-
-
-
-
-### 7.2. Manual de Usuario
 
 
 
