@@ -17,11 +17,17 @@ Enlace de GitHub: https://github.com/brayanfa07/IA-P1
 ---
 ## 1. Introducción
 La predicción de resultados es uno de los más grandes retos que posee la inteligencia artificial, ya que se requiere tener un modelo, de aprendizaje de datos, que logre identificar atributos como entradas y realizar un análisis, específico de cada modelo, para predecir una salida, la cual se espera sea correcta basada en los datos de entrenamiento.
+
 En este proyecto se desarrollan 2 modelos de aprendizaje, los cuales son:
 - Redes Neuronales.
 - Árboles de decisión.
 
-## 2. Predicción con Kaggle
+El objetivo primario del proyecto será enfrentar a los estudiantes con una situación cercana a un proyecto de clasificación real donde existe una fuente de datos cruda, debe procesarse los mismos, comparar algoritmos y reportar los resultados de una manera formal.
+Para ello se utiliza un conjunto de datos con ejemplos de muestras de tejidos posiblemente malignos, los modelos creados deberan ser capases de predecir si un cancer de acuerdo a sus caracteristicas es maligno o benigno.
+
+
+## 2. Predicción de datos. 
+Los datos utilizados para formar los diferentes set de datos que utilizan los algoritmos se obtienen desde un repositorio de datos para ciencia de los datos llamado Kaggle. Estos datos corresponden a una coleccion de ejemplos los cuales almacenan informacion de cada caracteristica que presente un diagnostico (ejemplo), por ejemplo, tamaño, axis, entre otros. Todas estas caracteristicas que describen los datos seran indispensables para que cada algoritmo sea capaz de entrenarse con ellos para asi, en caso de ellegar a recibir un nuevo diagnostico o ejemplo poder predecir si el cancer del que se esta tratando es maligno o no.
 
 
 ## 3. Árbol de Decisión
