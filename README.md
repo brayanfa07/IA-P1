@@ -70,6 +70,25 @@ Para la ejecución del modelo se toman las 569 filas del archivo de datos, las c
 
 ## 5. División de tareas y calificación de grupo
 
+Para la confección de la documentación del presente proyecto, los estudiantes se repartieron los distintos requisitos del proyecto. El estudiante Brayan Fajardo trabajó principalmente en la implementación del árbol de decisiones y el random forest, además de la normalización de los datos para la ejecución de los módulos. Fabricio Castillo y Gerald Mora trabajaron en la implementación de la red neuronal e intentaron realizar la implementación del cross validation. En la confección de la documentación del proyecto, cada estudiante realizó una parte para la finalización de esta.
+
+### Calificación del grupo:
+Brayan Fajardo:
+-Brayan: 100
+-Fabricio:100
+-Gerald:  100
+
+Fabricio Castillo:
+-Brayan: 100
+-Fabricio:100
+-Gerald:  100
+
+Gerald Mora:
+-Brayan: 100
+-Fabricio:100
+-Gerald:  100
+
+
 ## 6. Conclusiones
 
 
