@@ -100,10 +100,6 @@ Gerald Mora:
 -Gerald:  100
 
 
-## 6. Conclusiones
-
-
-
 ## 7. Apéndice
 ---
 
@@ -146,6 +142,11 @@ Comandos a ejecutar:
 
 `pip3 install keras`
 
+#### 7.1.5 Instalación de Pandas
+
+`pip install pandas`
+
+
 ### 7.2. Manual de usuario
 
 El manual de usuario es una guía para colocar a funcionar el sistema de predicción del voto.
@@ -166,9 +167,6 @@ Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcenta
 
 ## Referencias
 
-- https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial/Importing_Modules
-- https://docs.python.org/2/tutorial/classes.html
-- https://www.python-course.eu/python3_modules_and_modular_programming.php
 - Árbol kd. (2016, marzo 14). En Wikipedia, la enciclopedia libre. Recuperado a partir de https://es.wikipedia.org/w/index.php?title=%C3%81rbol_kd&oldid=89814916
 - Brownlee, J. (2016a, mayo 24). Develop Your First Neural Network in Python With Keras Step-By-Step. Recuperado 5 de mayo de 2018, a partir de https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
 - Brownlee, J. (2016b, junio 2). Multi-Class Classification Tutorial with the Keras Deep Learning Library. Recuperado 5 de mayo de 2018, a partir de https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/
