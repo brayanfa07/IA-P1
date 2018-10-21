@@ -14,10 +14,28 @@ import tensorflow as tf # Para crear el modelo de regresion lineal
 from numpy import argmax # Para decodificar vectores
 from keras.models import Sequential
 from keras.layers import Dense
-#numpy.random.seed(7)
 # Para generar la muestra de datos
 #from tec.ic.ia.pc1.g09 import generar_muestra_pais, generar_muestra_provincia
 from manage_file import read_file, delete_column_datalist, normalize_list
+
+
+
+# Variables globales generales
+prefijo = "" # Prefijo para el archivo de salida
+# Division de poblacion para pruebas y para entrenamiento
+porcentaje_pruebas = 20
+modelo = "" # Seleccion de modelo
+c = 0 # Parámetro de penalización del término de error.
+# Regresion lineal
+l1 = 0 # Coeficiente de regularizacion l1
+l2 = 0 # Coeficiente de regularizacion l2
+# Red neuronal
+numero_capas = 0 # Cantidad de capas de la red neuronal
+unidades_por_capa = 0 # Cantidad de unidades por cada de la red neuronal
+funcion_activacion = "" # Funcion de activacion de la red neuronal
+# Arbol de decision
+umbral_poda = 0 # Cantidad minima de ganancia para podar un nodo
+filename = "cancer.csv"
 
 
 class Decision_tree_model:
@@ -113,7 +131,7 @@ class Decision_tree_model:
                                     i += 1
                             cuenta1 = collections.Counter(tmp)
                             return cuenta1.most_common(1)[0][0]
-
+    
     def prunning(self,tree,umbral,depth):
             i = 0
             n = len(tree.children)
@@ -268,9 +286,7 @@ class Decision_tree_model:
                                     found = True
                     if found == False:
                             class_data_list.append(data_list[i][position])
-            return class_data_list
-
-          
+            return class_data_list        
 
     def convert_to_interval(self,datalist):
             new_list = []
@@ -298,7 +314,6 @@ class Decision_tree_model:
             return new_list
 
 
-
 class Decision_tree:
     element = None
     children = None
@@ -308,6 +323,3 @@ class Decision_tree:
         self.element = element #Index of the attribute in the data
         self.decisions = []
         self.children = []
-
-
-

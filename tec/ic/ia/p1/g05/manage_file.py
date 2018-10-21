@@ -98,5 +98,3 @@ def classify_data(datalist):
         print(row)
         print()
     return new_list
-
-#read_file("cancer.csv")

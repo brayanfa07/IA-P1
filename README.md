@@ -30,9 +30,9 @@ Para ello se utiliza un conjunto de datos con ejemplos de muestras de tejidos po
 Los datos utilizados para formar los diferentes set de datos que utilizan los algoritmos se obtienen desde un repositorio de datos para ciencia de los datos llamado Kaggle. Estos datos corresponden a una coleccion de ejemplos los cuales almacenan informacion de cada caracteristica que presente un diagnostico (ejemplo), por ejemplo, tamaño, axis, entre otros. Todas estas caracteristicas que describen los datos seran indispensables para que cada algoritmo sea capaz de entrenarse con ellos para asi, en caso de ellegar a recibir un nuevo diagnostico o ejemplo poder predecir si el cancer del que se esta tratando es maligno o no.
 
 
-## 3. Árbol de Decisión
+## 3. Random Forest
 
-El aŕbol de decisión es un tipo de algoritmo el cual es utilizado para determinar la predicción de una muestra o arreglo de datos que posea varios atributos. Dicha predicción se realiza de inmediata, con lo cual se van comparando los valores que posee una expresión lógica y se compara con los atributos originados para el árbol de decisión, con el fin de obtener un resultado.
+El modelo del Random Forest se basa en la ejecución de ejemplos aleatorios de varios aŕboles de decisión, el cual es un tipo de algoritmo que es utilizado para determinar la predicción de una muestra o arreglo de datos que posea varios atributos. Dicha predicción se realiza de inmediata, con lo cual se van comparando los valores que posee una expresión lógica y se compara con los atributos originados para el árbol de decisión, con el fin de obtener un resultado.
 
 Este modelo necesita analizar datos para determinar como será construida la estructura del árbol 
 
@@ -50,12 +50,23 @@ La elaboración del diseño del modelo conlleva los siguientes pasos:
 - Eliminación de atributos de la lista de la muestra de datos y que poseen la mayor ganancia de información : Se eliminan de la lista los atributos que poseen la mayor ganancia de la información, además que se eliminan aquellas clases de elementos en donde los valores del atributo seleccionados hayan llegado a su fin debido que poseen una entropia igual a cero.
 - Insertar en el árbol atributo con mayor ganancia : Del punto anterior, se elige el aributo con la mayor ganancia, y este se inserta en el árbol de decisión, agregando además los valores de dicho atributo que permitirá llegar a un resultado definitivo o seguir agregando más atributos o preguntas de decisión.
 - Definición de decisiones que salen de los atributos insertados en el árbol : Después de agregar un atributo al árbol de decisión, se definen cuales son los valores que saldrán de este nodo de árbol. En caso de ser un nodo o elemento que muestre el resultado del árbol, no se agregan más valores o ramas de valores a este nodo.
-- Poda del árbol : Es el proceso en el cual se eliminan nodos hoja del árbol, con el fin de que el mismo quede con mucha menos anchura y se mejore la velocidad en la predicción del modelo. 
+- Poda del árbol : Es el proceso en el cual se eliminan nodos hoja del árbol, con el fin de que el mismo quede con mucha menos anchura y se mejore la velocidad en la predicción del modelo.
+- Definición de elección de atributos para Random Forest: Se realiza una elección de los atributos que se van a determinar para cada árbol para, luego determinar cuáles clases de árboles se presentan con mayor frecuencia.
 
-### Prueba del modelo
+### Prueba del modelo y Análisis de resultados
+
+La ejecución del modelo del Random Forest se realiza aplicando la creación del algoritmo de árbol de decisión.
+
+Con respecto a la evaluación de resultados, se determina que no se logra completar la ejecución, ya que se presenta incompletitud a la hora de enlazar todos los métodos utilizados para la ejecución del árbol de decisión, y por tanto no se logra completar con la creación del Random Forest.
+
+Algunos de los problemas presentados son con respecto a la ejecución del algoritmo de Poda del árbol de decisión.
+
+#### Documento de entrada
+Archivo csv con 569 ejemplos y 32 atributos.
+
+#### Documento de salida
 
 
-### Análisis de resultados
 
 ## 4. Red Neuronal
 El modelo de Red neuronal utiliza la biblioteca de Keras la cual, está integrada, con un backend Tensorflow de inteligencia artificial. Las redes de neuronas artificiales (denominadas habitualmente como RNA o en inglés como: “ANN”) son un paradigma de aprendizaje y procesamiento automático inspirado en la forma en que funciona el sistema nervioso de los animales. Se trata de un sistema de interconexión de neuronas que colaboran entre sí para producir un estímulo de salida. En inteligencia artificial es frecuente referirse a ellas como redes de neuronas o redes neuronales. Forman parte de los denominados “Sistemas Inteligentes“, dentro de la rama de la Inteligencia Artificial.
@@ -125,7 +136,7 @@ Para realizar la ejecución del programa de Predicción, se deberá contar con t
 
 Se describen los pasos requeridos para poner a funcionar el programa:
 
-Ejecutar el comando `python3 g09.py`
+Ejecutar el comando `python3 main.py`, ingresando a la carpeta `tec/ic/ia/p1/g05`
 
 
 Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcentaje-pruebas <valor> --red-neuronal --red-neuronal --numero-capas <valor> --unidades-por-capa <valor> --funcion-activacion <valor> si se desea realizar una predicción utilizando la red neuronal.

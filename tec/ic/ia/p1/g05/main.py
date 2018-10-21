@@ -19,6 +19,7 @@ from keras.layers import Dense
 #from tec.ic.ia.pc1.g09 import generar_muestra_pais, generar_muestra_provincia
 from manage_file import read_file, delete_column_datalist, normalize_list, classify_data
 from decisiontree import Decision_tree_model, Decision_tree
+import RNN            
 
 # Variables globales generales
 prefijo = "" # Prefijo para el archivo de salida
@@ -26,13 +27,8 @@ poblacion = 100 # Tamanno de la muestra a generar
 # Division de poblacion para pruebas y para entrenamiento
 porcentaje_pruebas = 20
 modelo = "" # Seleccion de modelo
-# knn
-k = 0 # Cantidad de vecinos cercanos a considerar
 # svm
 c = 0 # Parámetro de penalización del término de error.
-gamma = 0 # Coeficiente de Kernel para rbf, poly y sigmoid.
-kernel = "" # Kernel a utilizar
-# Regresion lineal
 l1 = 0 # Coeficiente de regularizacion l1
 l2 = 0 # Coeficiente de regularizacion l2
 # Red neuronal
@@ -70,101 +66,8 @@ def ejecutar():
     div = int(porcentaje_pruebas * poblacion / 100)
     lista_r1, lista_r2, lista_r21, j = [], [], [], 0
 
-    if (modelo=="rl"):
-        lista_modelos_r21, lista_modelos_r2, lista_modelos_r1 = [], [], []
-        # 5-Cross validation
-        while(j < 5):
-            val = ((poblacion - div) / 5)
-            lr1 = LR(data[int(val * (j + 1)):] + data[:int(val * j)], "r1", l1, l2)
-            lr2 = LR(data[int(val * (j + 1)):] + data[:int(val * j)], "r2", l1, l2)
-            lr21 = LR(data[int(val * (j + 1)):] + data[:int(val * j)], "r21", l1, l2)
-            test = data[int(val * j):int(val * (j + 1))]
-            i, correcto_r21, correcto_r2, correcto_r1, n = 0, 0, 0, 0, len(test)
-            while(i < n):
-                dr1 = lr1.test([test[i]])
-                dr2 = lr2.test([test[i]])
-                dr21 = lr21.test([test[i]])
-                xdata[int(val * j) + i] += ["Si", dr1, dr2, dr21]
-                correcto_r1 += 1 if dr1 == test[i][22] else 0
-                correcto_r2 += 1 if dr2 == test[i][23] else 0
-                correcto_r21 += 1 if dr21 == test[i][23] else 0
-                i += 1
-            lista_r1.append(correcto_r1)
-            lista_r2.append(correcto_r2)
-            lista_r21.append(correcto_r21)
-            lista_modelos_r1.append(lr1)
-            lista_modelos_r2.append(lr2)
-            lista_modelos_r21.append(lr21)
-            j += 1
-        # Pruebas con el modelo entrenado
-        i_r1 = lista_r1.index(max(lista_r1))
-        i_r2 = lista_r2.index(max(lista_r2))
-        i_r21 = lista_r21.index(max(lista_r21))
-        promedio_r1 = mean(lista_r1)
-        promedio_r2 = mean(lista_r2)
-        promedio_r21 = mean(lista_r21)
-        val = poblacion - div
-        test = data[val:]
-        i, correcto_r21, correcto_r2, correcto_r1, n = 0, 0, 0, 0, len(test)
-        while(i < n):
-            dr1 = lista_modelos_r1[i_r1].test([test[i]])
-            dr2 = lista_modelos_r2[i_r2].test([test[i]])
-            dr21 = lista_modelos_r21[i_r21].test([test[i]])
-            xdata[val + i] += ["No", dr1, dr2, dr21]
-            correcto_r1 += 1 if dr1 == test[i][22] else 0
-            correcto_r2 += 1 if dr2 == test[i][23] else 0
-            correcto_r21 += 1 if dr21 == test[i][23] else 0
-            i += 1
-    elif(modelo=="rn"):
-        lista_modelos_r21, lista_modelos_r2, lista_modelos_r1 = [], [], []
-        # 5-Cross validation
-        while(j < 5):
-            val = ((poblacion - div) / 5)
-            #lr1 = NeuralNet(data[int(val * (j + 1)):] + data[:int(val * j)], "r1", l1, l2)
-            lr2 = NeuralNet(data[int(val * (j + 1)):] + data[:int(val * j)], numero_capas,unidades_por_capa,funcion_activacion)
-            lr21 = NeuralNet(data[int(val * (j + 1)):] + data[:int(val * j)], numero_capas,unidades_por_capa,funcion_activacion)
-            test = data[int(val * j):int(val * (j + 1))]
-            i, correcto_r21, correcto_r2, correcto_r1, n = 0, 0, 0, 0, len(test)
-            while(i < n):
-                #dr1 = lr1.test([test[i]])
-                dr2 = lr2.testR2([test[i]])
-                dr21 = lr21.testR2_R1([test[i]])
-                #xdata[int(val * j) + i] += ["Si", dr1, dr2, dr21]
-                xdata[int(val * j) + i] += ["Si", dr2, dr21]
-                #correcto_r1 += 1 if dr1 == test[i][22] else 0
-                correcto_r2 += 1 if dr2 == test[i][23] else 0
-                correcto_r21 += 1 if dr21 == test[i][23] else 0
-                i += 1
-            #lista_r1.append(correcto_r1)
-            lista_r2.append(correcto_r2)
-            lista_r21.append(correcto_r21)
-            #lista_modelos_r1.append(lr1)
-            lista_modelos_r2.append(lr2)
-            lista_modelos_r21.append(lr21)
-            j += 1
-        # Pruebas con el modelo entrenado
-        #i_r1 = lista_r1.index(max(lista_r1))
-        i_r2 = lista_r2.index(max(lista_r2))
-        i_r21 = lista_r21.index(max(lista_r21))
-        #promedio_r1 = mean(lista_r1)
-        promedio_r2 = mean(lista_r2)
-        promedio_r21 = mean(lista_r21)
-        val = poblacion - div
-        test = data[val:]
-        i, correcto_r21, correcto_r2, correcto_r1, n = 0, 0, 0, 0, len(test)
-        while(i < n):
-            #dr1 = lista_modelos_r1[i_r1].test([test[i]])
-            dr2 = lista_modelos_r2[i_r2].testR2([test[i]])
-            dr21 = lista_modelos_r21[i_r21].testR2_R1([test[i]])
-            #xdata[val + i] += ["No", dr1, dr2, dr21]
-            xdata[val + i] += ["No", dr2, dr21]
-            #correcto_r1 += 1 if dr1 == test[i][22] else 0
-            correcto_r2 += 1 if dr2 == test[i][23] else 0
-            correcto_r21 += 1 if dr21 == test[i][23] else 0
-            correcto_r1 = 0
-            promedio_r1 = 0
-            i += 1
-
+    if(modelo=="rn"):
+        RNN.rnn()   
     elif(modelo=="ad"):
         lista_modelos_r21, lista_modelos_r2, lista_modelos_r1 = [], [], []
         # 5-Cross validation
@@ -797,10 +700,7 @@ class NeuralNet:
                 tmp.append(find_party(data[i][23]))
             xdata.append(tmp)
             i += 1
-        return xdata0
-
-
-
+        return xdata
 
 if __name__ == '__main__':
     Comandos().cmdloop()
