@@ -69,7 +69,8 @@ Archivo csv con 569 ejemplos y 32 atributos.
 
 
 ## 4. Red Neuronal
-El modelo de Red neuronal utiliza la biblioteca de Keras la cual, está integrada, con un backend Tensorflow de inteligencia artificial. Las redes de neuronas artificiales (denominadas habitualmente como RNA o en inglés como: “ANN”) son un paradigma de aprendizaje y procesamiento automático inspirado en la forma en que funciona el sistema nervioso de los animales. Se trata de un sistema de interconexión de neuronas que colaboran entre sí para producir un estímulo de salida. En inteligencia artificial es frecuente referirse a ellas como redes de neuronas o redes neuronales. Forman parte de los denominados “Sistemas Inteligentes“, dentro de la rama de la Inteligencia Artificial.
+El modelo de Red neuronal utiliza la biblioteca de Tensorflow la cual, es una biblioteca de Machine Learning desarrollada por Google, comúnmente usada en la comunidad. Las redes de neuronas artificiales (denominadas habitualmente como RNA o en inglés como: “ANN”) son un paradigma de aprendizaje y procesamiento automático inspirado en la forma en que funciona el sistema nervioso de los animales. Se trata de un sistema de interconexión de neuronas que colaboran entre sí para producir un estímulo de salida. En inteligencia artificial es frecuente referirse a ellas como redes de neuronas o redes neuronales. Forman parte de los denominados “Sistemas Inteligentes“, dentro de la rama de la Inteligencia Artificial.
+
 
 ### Diseño del modelo
 Para la realización del modelo se modificó el archivo de datos para contar con una representación numérica de la predicción para utilizar la red neuronal. Posteriormente los datos son convertidos a un arreglo numpy, el cual es la estructura, que se debe utilizar con Keras. Estos datos son desordenados antes de ser utilizados. Se toma una cantidad de datos para realizar el entrenamiento y las pruebas de la red neuronal. Luego se especifica la estructura de los datos a utilizar por Tensorflow. A continuación se crea la red neuronal, se realiza el entrenamiento y se evalúa la precisión de la red neuronal.
@@ -79,6 +80,25 @@ Para la ejecución del modelo se toman las 569 filas del archivo de datos, las c
 
 
 ## 5. División de tareas y calificación de grupo
+
+Para la confección de la documentación del presente proyecto, los estudiantes se repartieron los distintos requisitos del proyecto. El estudiante Brayan Fajardo trabajó principalmente en la implementación del árbol de decisiones y el random forest, además de la normalización de los datos para la ejecución de los módulos. Fabricio Castillo y Gerald Mora trabajaron en la implementación de la red neuronal e intentaron realizar la implementación del cross validation. En la confección de la documentación del proyecto, cada estudiante realizó una parte para la finalización de esta.
+
+### Calificación del grupo:
+Brayan Fajardo:
+-Brayan: 100
+-Fabricio:100
+-Gerald:  100
+
+Fabricio Castillo:
+-Brayan: 100
+-Fabricio:100
+-Gerald:  100
+
+Gerald Mora:
+-Brayan: 100
+-Fabricio:100
+-Gerald:  100
+
 
 ## 6. Conclusiones
 
@@ -149,3 +169,17 @@ Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcenta
 - https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial/Importing_Modules
 - https://docs.python.org/2/tutorial/classes.html
 - https://www.python-course.eu/python3_modules_and_modular_programming.php
+- Árbol kd. (2016, marzo 14). En Wikipedia, la enciclopedia libre. Recuperado a partir de https://es.wikipedia.org/w/index.php?title=%C3%81rbol_kd&oldid=89814916
+- Brownlee, J. (2016a, mayo 24). Develop Your First Neural Network in Python With Keras Step-By-Step. Recuperado 5 de mayo de 2018, a partir de https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
+- Brownlee, J. (2016b, junio 2). Multi-Class Classification Tutorial with the Keras Deep Learning Library. Recuperado 5 de mayo de 2018, a partir de https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/
+- Desarrolla tu Primera Red Neural en Python con Keras Paso a Paso - ® Cursos Python desde 0 a Experto trophy garantizados. (s. f.). Recuperado 5 de mayo de 2018, a partir de https://www.aprenderpython.net/desarrolla-primera-red-neural-python-keras-paso-paso/
+- In-Depth: Support Vector Machines | Python Data Science Handbook. (s. f.). Recuperado 5 de mayo de 2018, a partir de https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html
+- kdtree-in-python: Source Code for K-d tree in Python series. (2018). Python, Tsoding. Recuperado a partir de https://github.com/tsoding/kdtree-in-python (Original work published 2017)
+- Logistic regression in Tensorflow for beginner. (s. f.). Recuperado 5 de mayo de 2018, a partir de https://www.kaggle.com/niyamatalmass/logistic-regression-in-tensorflow-for-beginner
+- Logistic Regression with TensorFlow. (s. f.). Recuperado 5 de mayo de 2018, a partir de http://www.serrate.net/2018/02/18/logistic-regression-with-tensorflow/index.html
+- Polamuri, S. (2017, enero 25). Support vector machine (Svm classifier) implemenation in python with Scikit-learn.
+Recuperado 5 de mayo de 2018, a partir de http://dataaspirant.com/2017/01/25/svm-classifier-implemenation-python-scikit-learn/
+- Sequential - Keras Documentation. (s. f.). Recuperado 5 de mayo de 2018, a partir de https://keras.io/models/sequential/
+- Sikonja, M. R. (1998). Speeding up Relief algorithms with k-d trees.
+- TK. (2017, octubre 28). Learning Tree Data Structure. Recuperado 5 de mayo de 2018, a partir de https://medium.com/the-renaissance-developer/learning-tree-data-structure-27c6bb363051
+- Understanding Support Vector Machine algorithm from examples (along with code). (2017, septiembre 13). Recuperado 5 de mayo de 2018, a partir de https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/
