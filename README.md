@@ -160,9 +160,9 @@ Se describen los pasos requeridos para poner a funcionar el programa:
 Ejecutar el comando `python3 main.py`, ingresando a la carpeta `tec/ic/ia/p1/g05`
 
 
-Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcentaje-pruebas <valor> --red-neuronal --red-neuronal --numero-capas <valor> --unidades-por-capa <valor> --funcion-activacion <valor> si se desea realizar una predicción utilizando la red neuronal.
+Escribir el comando predecir --prefijo <etiqueta> --porcentaje-pruebas <valor> --red-neuronal --red-neuronal --numero-capas <valor> --unidades-por-capa <valor> --funcion-activacion <valor> si se desea realizar una predicción utilizando la red neuronal.
 
-Escribir el comando predecir --prefijo <etiqueta> --poblacion <valor> --porcentaje-pruebas <valor> --arbol --umbral-poda <valor> si se desea realizar una predicción utilizando el árbol de decisión.
+Escribir el comando predecir --prefijo <etiqueta> --porcentaje-pruebas <valor> --arbol --umbral-poda <valor> si se desea realizar una predicción utilizando el árbol de decisión.
 
 
 ## Referencias
